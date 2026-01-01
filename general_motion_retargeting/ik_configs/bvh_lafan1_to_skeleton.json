@@ -70,7 +70,7 @@
                 -0.5
             ]
         ],
-        "toes_r": [
+        "talus_r": [
             "RightFootMod",
             50,
             10,
@@ -118,7 +118,7 @@
                 -0.5
             ]
         ],
-        "toes_l": [
+        "talus_l": [
             "LeftFootMod",
             50,
             10,
@@ -166,7 +166,7 @@
                 -0.5
             ]
         ],
-        "hand_r": [
+        "ulna_r": [
             "RightForeArm",
             0,
             10,
@@ -246,7 +246,7 @@
                 0.0
             ]
         ],
-        "radius_l": [
+        "hand_l": [
             "LeftHand",
             0,
             10,
@@ -312,7 +312,7 @@
                 -0.5
             ]
         ],
-        "toes_r": [
+        "talus_r": [
             "RightFootMod",
             50,
             10,
@@ -360,7 +360,7 @@
                 -0.5
             ]
         ],
-        "toes_l": [
+        "talus_l": [
             "LeftFootMod",
             50,
             10,
@@ -488,7 +488,7 @@
                 0.0
             ]
         ],
-        "radius_l": [
+        "hand_l": [
             "LeftHand",
             10,
             5,
