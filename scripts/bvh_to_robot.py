@@ -80,7 +80,7 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args(
-        "--bvh_file /home/tom/projects/ubisoft-laforge-animation-dataset/lafan1/lafan1/jumps1_subject5.bvh --robot skeleton".split(
+        "--bvh_file /home/tom/projects/ubisoft-laforge-animation-dataset/lafan1/lafan1/walk1_subject1.bvh --robot skeleton".split(
             " "
         )
     )
@@ -148,15 +148,34 @@ if __name__ == "__main__":
         qpos = retargeter.retarget(smplx_data)
 
         # visualize
+        # build human->robot frame mapping from IK match tables
+        human_to_robot_map = {}
+        try:
+            for frame_name, entry in retargeter.ik_match_table1.items():
+                human_name = entry[0]
+                human_to_robot_map[human_name] = frame_name
+        except Exception:
+            pass
+        try:
+            for frame_name, entry in retargeter.ik_match_table2.items():
+                human_name = entry[0]
+                human_to_robot_map[human_name] = frame_name
+        except Exception:
+            pass
+
         robot_motion_viewer.step(
             root_pos=qpos[:3],
             root_rot=qpos[3:7],
             dof_pos=qpos[7:],
             human_motion_data=retargeter.scaled_human_data,
+            robot_frame_map=human_to_robot_map,
             rate_limit=args.rate_limit,
             follow_camera=True,
             # human_pos_offset=np.array([0.0, 0.0, 0.0])
         )
+
+        if i == 10:
+            pass
 
         if args.loop:
             i = (i + 1) % len(lafan1_data_frames)

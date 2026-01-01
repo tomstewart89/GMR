@@ -47,6 +47,29 @@ def draw_frame(
         v.user_scn.ngeom += 1
 
 
+def draw_connector(from_pos, to_pos, v, width=0.005, rgba=[1, 1, 0, 1]):
+    """Draw a connector (cylinder) between two points in the viewer."""
+    geom = v.user_scn.geoms[v.user_scn.ngeom]
+    mid = 0.5 * (from_pos + to_pos)
+    # initialize a thin cylinder geom at the midpoint (mat is identity)
+    mj.mjv_initGeom(
+        geom,
+        type=mj.mjtGeom.mjGEOM_CYLINDER,
+        size=[width, 0.01, 0.01],
+        pos=mid,
+        mat=np.eye(3).flatten(),
+        rgba=rgba,
+    )
+    mj.mjv_connector(
+        v.user_scn.geoms[v.user_scn.ngeom],
+        type=mj.mjtGeom.mjGEOM_CYLINDER,
+        width=width,
+        from_=from_pos,
+        to=to_pos,
+    )
+    v.user_scn.ngeom += 1
+
+
 class RobotMotionViewer:
     def __init__(
         self,
@@ -116,6 +139,11 @@ class RobotMotionViewer:
         # rate limit
         rate_limit=True,
         follow_camera=True,
+        # mapping from human body name -> robot body frame name (string)
+        robot_frame_map=None,
+        # show robot frames and connectors
+        show_robot_frames=True,
+        show_robot_connectors=True,
     ):
         """
         by default visualize robot motion.
@@ -153,6 +181,38 @@ class RobotMotionViewer:
                     joint_name=human_body_name if show_human_body_name else None,
                 )
 
+            # If provided, draw corresponding frames on the robot and connectors
+            if robot_frame_map is not None and show_robot_frames:
+                for human_body_name, (pos, rot) in human_motion_data.items():
+                    if human_body_name not in robot_frame_map:
+                        continue
+                    robot_body_name = robot_frame_map[human_body_name]
+                    try:
+                        bid = self.model.body(robot_body_name).id
+                    except Exception:
+                        # fallback: try mj name lookup
+                        try:
+                            bid = mj.mj_name2id(self.model, mj.mjtObj.mjOBJ_BODY, robot_body_name)
+                        except Exception:
+                            continue
+
+                    # robot world-space position and orientation
+                    robot_pos = self.data.xpos[bid].copy()
+                    robot_mat = self.data.xmat[bid].reshape(3, 3).copy()
+
+                    # draw a small frame at the robot body
+                    draw_frame(
+                        robot_pos,
+                        robot_mat,
+                        self.viewer,
+                        human_point_scale * 0.8,
+                        joint_name=robot_body_name,
+                    )
+
+                    # draw a connector line from human visual pos to robot pos
+                    if show_robot_connectors:
+                        human_vis_pos = pos + human_pos_offset
+                        draw_connector(human_vis_pos, robot_pos, self.viewer)
         self.viewer.sync()
         if rate_limit is True:
             self.rate_limiter.sleep()
