@@ -114,10 +114,6 @@ class GeneralMotionRetargeting:
 
         for frame_name, entry in self.ik_match_table1.items():
             body_name, pos_weight, rot_weight, pos_offset, rot_offset = entry
-            pos_weight, rot_weight = 1, 0
-
-            # if body_name == "Hips":
-            #     rot_weight = 10
             if pos_weight != 0 or rot_weight != 0:
                 task = mink.FrameTask(
                     frame_name=frame_name,
@@ -136,9 +132,6 @@ class GeneralMotionRetargeting:
 
         for frame_name, entry in self.ik_match_table2.items():
             body_name, pos_weight, rot_weight, pos_offset, rot_offset = entry
-            pos_weight, rot_weight = 1, 0
-            # if body_name == "Hips":
-            #     rot_weight = 10
             if pos_weight != 0 or rot_weight != 0:
                 task = mink.FrameTask(
                     frame_name=frame_name,
