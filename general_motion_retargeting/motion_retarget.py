@@ -119,6 +119,11 @@ class GeneralMotionRetargeting:
             for frame_name, ik_match in self.ik_match_table.items()
         }
 
+        self.human_to_robot_map = {
+            ik_match.human_frame_name: frame_name
+            for frame_name, ik_match in self.ik_match_table.items()
+        }
+
     def update_targets(self, human_data, offset_to_ground=False):
         # scale human data in local frame
         human_data = self.to_numpy(human_data)
@@ -190,7 +195,7 @@ class GeneralMotionRetargeting:
         scaled_root_pos = self.human_scale_table[self.human_root_name] * root_pos
 
         # scale other body parts in local frame
-        for body_name in human_data.keys():
+        for body_name in human_data:
             if body_name not in self.human_scale_table:
                 continue
             if body_name == self.human_root_name:
@@ -216,8 +221,7 @@ class GeneralMotionRetargeting:
         offset_human_data = {}
         for body_name in human_data:
             pos, quat = human_data[body_name]
-            body_pose = mink.SE3(np.hstack([quat, pos]))
-            body_pose = body_pose.multiply(self.frame_offsets[body_name])
+            body_pose = mink.SE3(np.hstack([quat, pos])) @ self.frame_offsets[body_name]
             offset_human_data[body_name] = [
                 body_pose.translation(),
                 body_pose.rotation().wxyz,
@@ -229,16 +233,14 @@ class GeneralMotionRetargeting:
         """find the lowest point of the human data and offset the human data to the ground"""
         offset_human_data = {}
         ground_offset = 0.1
-        lowest_pos = np.inf
 
-        for body_name in human_data.keys():
-            # only consider the foot/Foot
-            if "Foot" not in body_name and "foot" not in body_name:
-                continue
-            pos, quat = human_data[body_name]
-            if pos[2] < lowest_pos:
-                lowest_pos = pos[2]
-        for body_name in human_data.keys():
+        lowest_pos = min(
+            body_pose[0][2]
+            for body_name, body_pose in human_data.items()
+            if "Foot" in body_name or "foot" in body_name
+        )
+
+        for body_name in human_data:
             pos, quat = human_data[body_name]
             offset_human_data[body_name] = [pos, quat]
             offset_human_data[body_name][0] = (
@@ -250,7 +252,6 @@ class GeneralMotionRetargeting:
         self.ground_offset = ground_offset
 
     def apply_ground_offset(self, human_data):
-        for body_name in human_data.keys():
-            pos, quat = human_data[body_name]
-            human_data[body_name][0] = pos - np.array([0, 0, self.ground_offset])
+        for body_name in human_data:
+            human_data[body_name][0] -= np.array([0, 0, self.ground_offset])
         return human_data

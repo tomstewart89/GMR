@@ -11,8 +11,6 @@ import numpy as np
 
 if __name__ == "__main__":
 
-    HERE = pathlib.Path(__file__).parent
-
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--bvh_file",
@@ -103,24 +101,9 @@ if __name__ == "__main__":
         video_path=args.video_path,
     )
 
-    # FPS measurement variables
-    fps_counter = 0
-    fps_start_time = time.time()
-    fps_display_interval = 2.0  # Display FPS every 2 seconds
-
     print(f"mocap_frame_rate: {args.motion_fps}")
 
     for frame in tqdm(lafan1_data_frames, desc="Retargeting"):
-
-        # FPS measurement
-        fps_counter += 1
-        current_time = time.time()
-        if current_time - fps_start_time >= fps_display_interval:
-            actual_fps = fps_counter / (current_time - fps_start_time)
-            print(f"Actual rendering FPS: {actual_fps:.2f}")
-            fps_counter = 0
-            fps_start_time = current_time
-
         # retarget
         qpos = retargeter.retarget(frame)
 
@@ -129,7 +112,7 @@ if __name__ == "__main__":
             root_rot=qpos[3:7],
             dof_pos=qpos[7:],
             human_motion_data=retargeter.scaled_human_data,
-            robot_frame_map=retargeter.robot_to_human_map,
+            robot_frame_map=retargeter.human_to_robot_map,
             rate_limit=args.rate_limit,
             follow_camera=True,
         )
