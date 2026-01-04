@@ -3,19 +3,15 @@
     "human_root_name": "Hips",
     "ground_height": 0.0,
     "human_height_assumption": 1.8,
-    "use_ik_match_table1": true,
-    "use_ik_match_table2": true,
     "human_scale_table": {
         "Hips": 0.6,
         "Spine2": 0.6,
-
         "LeftUpLeg": 0.6,
         "RightUpLeg": 0.6,
         "LeftLeg": 0.6,
         "RightLeg": 0.6,
         "LeftFootMod": 0.6,
         "RightFootMod": 0.6,
-
         "LeftArm": 0.7,
         "RightArm": 0.7,
         "LeftForeArm": 0.7,
@@ -23,457 +19,320 @@
         "LeftHand": 0.7,
         "RightHand": 0.7
     },
-
-    "ik_match_table1": {
-        "Waist": [
-            "Hips",
-            0,
-            10,
-            [
+    "ik_match_table": {
+        "Waist": {
+            "human_frame_name": "Hips",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.5,
                 0.5,
                 0.5,
                 0.5
             ]
-        ],
-        "Hip_Yaw_Left": [
-            "LeftUpLeg",
-            0,
-            10,
-            [
+        },
+        "Hip_Yaw_Left": {
+            "human_frame_name": "LeftUpLeg",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.5,
                 0.5,
                 0.5,
                 -0.5
             ]
-        ],
-        "Shank_Left": [
-            "LeftLeg",
-            0,
-            10,
-            [
+        },
+        "Shank_Left": {
+            "human_frame_name": "LeftLeg",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.5,
                 0.5,
                 0.5,
                 -0.5
             ]
-        ],
-        "left_foot_link": [
-            "LeftFootMod",
-            100,
-            50,
-            [
+        },
+        "left_foot_link": {
+            "human_frame_name": "LeftFootMod",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.70710678,
                 0.70710678,
                 0.0,
                 0.0
             ]
-        ],
-        "Hip_Yaw_Right": [
-            "RightUpLeg",
-            0,
-            10,
-            [
+        },
+        "Hip_Yaw_Right": {
+            "human_frame_name": "RightUpLeg",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.5,
                 0.5,
                 0.5,
                 -0.5
             ]
-        ],
-        "Shank_Right": [
-            "RightLeg",
-            0,
-            10,
-            [
+        },
+        "Shank_Right": {
+            "human_frame_name": "RightLeg",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.5,
                 0.5,
                 0.5,
                 -0.5
             ]
-        ],
-        "right_foot_link": [
-            "RightFootMod",
-            100,
-            50,
-            [
+        },
+        "right_foot_link": {
+            "human_frame_name": "RightFootMod",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.70710678,
                 0.70710678,
                 0.0,
                 0.0
             ]
-        ],
-        "Trunk": [
-            "Spine2",
-            0,
-            10,
-            [
+        },
+        "Trunk": {
+            "human_frame_name": "Spine2",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.5,
                 0.5,
                 0.5,
                 0.5
             ]
-        ],
-        "AL2": [
-            "LeftArm",
-            0,
-            10,
-            [
+        },
+        "AL2": {
+            "human_frame_name": "LeftArm",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.7071067811865476,
                 0.0,
                 0.0,
                 -0.7071067811865476
             ]
-        ],
-        "AL4": [
-            "LeftForeArm",
-            0,
-            10,
-            [
+        },
+        "AL4": {
+            "human_frame_name": "LeftForeArm",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.7071067811865476,
                 0.0,
                 0.0,
                 -0.7071067811865476
             ]
-        ],
-        "AL5": [
-            "LeftHand",
-            0,
-            10,
-            [
+        },
+        "AL5": {
+            "human_frame_name": "LeftHand",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.7071067811865476,
                 0.0,
                 0.0,
                 -0.7071067811865476
             ]
-        ],
-        "AR2": [
-            "RightArm",
-            0,
-            10,
-            [
+        },
+        "AR2": {
+            "human_frame_name": "RightArm",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.0,
                 -0.7071067811865476,
                 0.7071067811865476,
                 0.0
             ]
-        ],
-        "AR4": [
-            "RightForeArm",
-            0,
-            10,
-            [
+        },
+        "AR4": {
+            "human_frame_name": "RightForeArm",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.0,
                 -0.7071067811865476,
                 0.7071067811865476,
                 0.0
             ]
-        ],
-        "AR5": [
-            "RightHand",
-            0,
-            10,
-            [
+        },
+        "AR5": {
+            "human_frame_name": "RightHand",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.0,
                 -0.7071067811865476,
                 0.7071067811865476,
                 0.0
             ]
-        ]
+        }
     },
-    "ik_match_table2": {
-        "Waist": [
-            "Hips",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.5,
-                0.5,
-                0.5,
-                0.5
-            ]
-        ],
-        "Hip_Yaw_Left": [
-            "LeftUpLeg",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.5,
-                0.5,
-                0.5,
-                -0.5
-            ]
-        ],
-        "Shank_Left": [
-            "LeftLeg",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.5,
-                0.5,
-                0.5,
-                -0.5
-            ]
-        ],
-        "left_foot_link": [
-            "LeftFootMod",
-            100,
-            50,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.70710678,
-                0.70710678,
-                0.0,
-                0.0
-            ]
-        ],
-        "Hip_Yaw_Right": [
-            "RightUpLeg",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.5,
-                0.5,
-                0.5,
-                -0.5
-            ]
-        ],
-        "Shank_Right": [
-            "RightLeg",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.5,
-                0.5,
-                0.5,
-                -0.5
-            ]
-        ],
-        "right_foot_link": [
-            "RightFootMod",
-            100,
-            50,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.70710678,
-                0.70710678,
-                0.0,
-                0.0
-            ]
-        ],
-        "Trunk": [
-            "Spine2",
-            0,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.5,
-                0.5,
-                0.5,
-                0.5
-            ]
-        ],
-        "AL2": [
-            "LeftArm",
-            5,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.7071067811865476,
-                0.0,
-                0.0,
-                -0.7071067811865476
-            ]
-        ],
-        "AL4": [
-            "LeftForeArm",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.7071067811865476,
-                0.0,
-                0.0,
-                -0.7071067811865476
-            ]
-        ],
-        "AL5": [
-            "LeftHand",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.7071067811865476,
-                0.0,
-                0.0,
-                -0.7071067811865476
-            ]
-        ],
-        "AR2": [
-            "RightArm",
-            5,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.0,
-                -0.7071067811865476,
-                0.7071067811865476,
-                0.0
-            ]
-        ],
-        "AR4": [
-            "RightForeArm",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.0,
-                -0.7071067811865476,
-                0.7071067811865476,
-                0.0
-            ]
-        ],
-        "AR5": [
-            "RightHand",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.0,
-                -0.7071067811865476,
-                0.7071067811865476,
-                0.0
-            ]
-        ]
-    }
+    "task_weights": [
+        {
+            "Waist": {
+                "position": 0,
+                "rotation": 10
+            },
+            "Hip_Yaw_Left": {
+                "position": 0,
+                "rotation": 10
+            },
+            "Shank_Left": {
+                "position": 0,
+                "rotation": 10
+            },
+            "left_foot_link": {
+                "position": 100,
+                "rotation": 50
+            },
+            "Hip_Yaw_Right": {
+                "position": 0,
+                "rotation": 10
+            },
+            "Shank_Right": {
+                "position": 0,
+                "rotation": 10
+            },
+            "right_foot_link": {
+                "position": 100,
+                "rotation": 50
+            },
+            "Trunk": {
+                "position": 0,
+                "rotation": 10
+            },
+            "AL2": {
+                "position": 0,
+                "rotation": 10
+            },
+            "AL4": {
+                "position": 0,
+                "rotation": 10
+            },
+            "AL5": {
+                "position": 0,
+                "rotation": 10
+            },
+            "AR2": {
+                "position": 0,
+                "rotation": 10
+            },
+            "AR4": {
+                "position": 0,
+                "rotation": 10
+            },
+            "AR5": {
+                "position": 0,
+                "rotation": 10
+            }
+        },
+        {
+            "Waist": {
+                "position": 10,
+                "rotation": 5
+            },
+            "Hip_Yaw_Left": {
+                "position": 10,
+                "rotation": 5
+            },
+            "Shank_Left": {
+                "position": 10,
+                "rotation": 5
+            },
+            "left_foot_link": {
+                "position": 100,
+                "rotation": 50
+            },
+            "Hip_Yaw_Right": {
+                "position": 10,
+                "rotation": 5
+            },
+            "Shank_Right": {
+                "position": 10,
+                "rotation": 5
+            },
+            "right_foot_link": {
+                "position": 100,
+                "rotation": 50
+            },
+            "Trunk": {
+                "position": 0,
+                "rotation": 10
+            },
+            "AL2": {
+                "position": 5,
+                "rotation": 10
+            },
+            "AL4": {
+                "position": 10,
+                "rotation": 5
+            },
+            "AL5": {
+                "position": 10,
+                "rotation": 5
+            },
+            "AR2": {
+                "position": 5,
+                "rotation": 10
+            },
+            "AR4": {
+                "position": 10,
+                "rotation": 5
+            },
+            "AR5": {
+                "position": 10,
+                "rotation": 5
+            }
+        }
+    ]
 }

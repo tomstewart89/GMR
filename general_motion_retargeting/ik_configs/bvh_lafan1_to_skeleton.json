@@ -3,8 +3,6 @@
     "human_root_name": "Hips",
     "ground_height": 0.0,
     "human_height_assumption": 1.8,
-    "use_ik_match_table1": true,
-    "use_ik_match_table2": true,
     "human_scale_table": {
         "Hips": 1.0,
         "Spine2": 1.0,
@@ -21,456 +19,320 @@
         "LeftHand": 1.0,
         "RightHand": 1.0
     },
-    "ik_match_table1": {
-        "pelvis": [
-            "Hips",
-            0,
-            10,
-            [
+    "ik_match_table": {
+        "pelvis": {
+            "human_frame_name": "Hips",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0,
                 0.7071068,
                 0.7071068,
                 0
             ]
-        ],
-        "femur_r": [
-            "RightUpLeg",
-            0,
-            10,
-            [
+        },
+        "femur_r": {
+            "human_frame_name": "RightUpLeg",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.7071068,
                 0,
                 0,
                 0.7071068
             ]
-        ],
-        "tibia_r": [
-            "RightLeg",
-            0,
-            10,
-            [
+        },
+        "tibia_r": {
+            "human_frame_name": "RightLeg",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.7071068,
                 0,
                 0,
                 0.7071068
             ]
-        ],
-        "talus_r": [
-            "RightFootMod",
-            50,
-            10,
-            [
+        },
+        "talus_r": {
+            "human_frame_name": "RightFootMod",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 1,
                 0,
                 0,
                 0
             ]
-        ],
-        "femur_l": [
-            "LeftUpLeg",
-            0,
-            10,
-            [
+        },
+        "femur_l": {
+            "human_frame_name": "LeftUpLeg",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.7071068,
                 0,
                 0,
                 0.7071068
             ]
-        ],
-        "tibia_l": [
-            "LeftLeg",
-            0,
-            10,
-            [
+        },
+        "tibia_l": {
+            "human_frame_name": "LeftLeg",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.7071068,
                 0,
                 0,
                 0.7071068
             ]
-        ],
-        "talus_l": [
-            "LeftFootMod",
-            50,
-            10,
-            [
+        },
+        "talus_l": {
+            "human_frame_name": "LeftFootMod",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 1,
                 0,
                 0,
                 0
             ]
-        ],
-        "torso": [
-            "Spine2",
-            0,
-            100,
-            [
+        },
+        "torso": {
+            "human_frame_name": "Spine2",
+            "position": [
                 0.0,
                 -0.2,
                 0.0
             ],
-            [
+            "rotation": [
                 0.0,
                 0.70710678,
                 0.70710678,
                 0.0
             ]
-        ],
-        "humerus_r": [
-            "RightArm",
-            0,
-            100,
-            [
+        },
+        "humerus_r": {
+            "human_frame_name": "RightArm",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0,
                 -0.7071068,
                 0.7071068,
                 0
             ]
-        ],
-        "humerus_l": [
-            "LeftArm",
-            0,
-            100,
-            [
+        },
+        "humerus_l": {
+            "human_frame_name": "LeftArm",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0,
                 -0.7071068,
                 0.7071068,
                 0
             ]
-        ],
-        "ulna_r": [
-            "RightForeArm",
-            0,
-            10,
-            [
+        },
+        "ulna_r": {
+            "human_frame_name": "RightForeArm",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0,
                 -0.7071068,
                 0.7071068,
                 0
             ]
-        ],
-        "hand_r": [
-            "RightHand",
-            0,
-            10,
-            [
+        },
+        "hand_r": {
+            "human_frame_name": "RightHand",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0,
                 -0.7071068,
                 0.7071068,
                 0
             ]
-        ],
-        "ulna_l": [
-            "LeftForeArm",
-            0,
-            10,
-            [
+        },
+        "ulna_l": {
+            "human_frame_name": "LeftForeArm",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0,
                 -0.7071068,
                 0.7071068,
                 0
             ]
-        ],
-        "hand_l": [
-            "LeftHand",
-            0,
-            10,
-            [
+        },
+        "hand_l": {
+            "human_frame_name": "LeftHand",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0,
                 -0.7071068,
                 0.7071068,
                 0
             ]
-        ]
+        }
     },
-    "ik_match_table2": {
-        "pelvis": [
-            "Hips",
-            100,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0,
-                0.7071068,
-                0.7071068,
-                0
-            ]
-        ],
-        "femur_r": [
-            "RightUpLeg",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.7071068,
-                0,
-                0,
-                0.7071068
-            ]
-        ],
-        "tibia_r": [
-            "RightLeg",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.7071068,
-                0,
-                0,
-                0.7071068
-            ]
-        ],
-        "talus_r": [
-            "RightFootMod",
-            50,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                1,
-                0,
-                0,
-                0
-            ]
-        ],
-        "femur_l": [
-            "LeftUpLeg",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.7071068,
-                0,
-                0,
-                0.7071068
-            ]
-        ],
-        "tibia_l": [
-            "LeftLeg",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.7071068,
-                0,
-                0,
-                0.7071068
-            ]
-        ],
-        "talus_l": [
-            "LeftFootMod",
-            50,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                1,
-                0,
-                0,
-                0
-            ]
-        ],
-        "torso": [
-            "Spine2",
-            0,
-            10,
-            [
-                0.0,
-                -0.2,
-                0.0
-            ],
-            [
-                0.0,
-                0.70710678,
-                0.70710678,
-                0.0
-            ]
-        ],
-        "humerus_r": [
-            "RightArm",
-            5,
-            100,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0,
-                -0.7071068,
-                0.7071068,
-                0
-            ]
-        ],
-        "humerus_l": [
-            "LeftArm",
-            5,
-            100,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0,
-                -0.7071068,
-                0.7071068,
-                0
-            ]
-        ],
-        "ulna_r": [
-            "RightForeArm",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0,
-                -0.7071068,
-                0.7071068,
-                0
-            ]
-        ],
-        "hand_r": [
-            "RightHand",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0,
-                -0.7071068,
-                0.7071068,
-                0
-            ]
-        ],
-        "ulna_l": [
-            "LeftForeArm",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0,
-                -0.7071068,
-                0.7071068,
-                0
-            ]
-        ],
-        "hand_l": [
-            "LeftHand",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0,
-                -0.7071068,
-                0.7071068,
-                0
-            ]
-        ]
-    }
+    "task_weights": [
+        {
+            "pelvis": {
+                "position": 0,
+                "rotation": 10
+            },
+            "femur_r": {
+                "position": 0,
+                "rotation": 10
+            },
+            "tibia_r": {
+                "position": 0,
+                "rotation": 10
+            },
+            "talus_r": {
+                "position": 50,
+                "rotation": 10
+            },
+            "femur_l": {
+                "position": 0,
+                "rotation": 10
+            },
+            "tibia_l": {
+                "position": 0,
+                "rotation": 10
+            },
+            "talus_l": {
+                "position": 50,
+                "rotation": 10
+            },
+            "torso": {
+                "position": 0,
+                "rotation": 100
+            },
+            "humerus_r": {
+                "position": 0,
+                "rotation": 100
+            },
+            "humerus_l": {
+                "position": 0,
+                "rotation": 100
+            },
+            "ulna_r": {
+                "position": 0,
+                "rotation": 10
+            },
+            "hand_r": {
+                "position": 0,
+                "rotation": 10
+            },
+            "ulna_l": {
+                "position": 0,
+                "rotation": 10
+            },
+            "hand_l": {
+                "position": 0,
+                "rotation": 10
+            }
+        },
+        {
+            "pelvis": {
+                "position": 100,
+                "rotation": 5
+            },
+            "femur_r": {
+                "position": 10,
+                "rotation": 5
+            },
+            "tibia_r": {
+                "position": 10,
+                "rotation": 5
+            },
+            "talus_r": {
+                "position": 50,
+                "rotation": 10
+            },
+            "femur_l": {
+                "position": 10,
+                "rotation": 5
+            },
+            "tibia_l": {
+                "position": 10,
+                "rotation": 5
+            },
+            "talus_l": {
+                "position": 50,
+                "rotation": 10
+            },
+            "torso": {
+                "position": 0,
+                "rotation": 10
+            },
+            "humerus_r": {
+                "position": 5,
+                "rotation": 100
+            },
+            "humerus_l": {
+                "position": 5,
+                "rotation": 100
+            },
+            "ulna_r": {
+                "position": 10,
+                "rotation": 5
+            },
+            "hand_r": {
+                "position": 10,
+                "rotation": 5
+            },
+            "ulna_l": {
+                "position": 10,
+                "rotation": 5
+            },
+            "hand_l": {
+                "position": 10,
+                "rotation": 5
+            }
+        }
+    ]
 }

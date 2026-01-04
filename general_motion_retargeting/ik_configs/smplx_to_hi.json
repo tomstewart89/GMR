@@ -3,484 +3,359 @@
     "human_root_name": "pelvis",
     "ground_height": -0.05,
     "human_height_assumption": 1.8,
-    "use_ik_match_table1": true,
-    "use_ik_match_table2": true,
     "human_scale_table": {
         "pelvis": 0.5,
         "spine3": 0.5,
-
         "left_hip": 0.5,
         "right_hip": 0.5,
         "left_knee": 0.5,
         "right_knee": 0.5,
         "left_foot": 0.5,
         "right_foot": 0.5,
-
         "left_shoulder": 0.5,
         "right_shoulder": 0.5,
         "left_elbow": 0.5,
         "right_elbow": 0.5,
         "left_wrist": 0.5,
         "right_wrist": 0.5,
-
         "head": 0.5
     },
-
-    "ik_match_table1": {
-        "head_pitch_link": [
-            "head",
-            0,
-            10,
-            [0.0, 0.0, 0.0],
-            [-0.5, 0.5, 0.5, 0.5]
-        ],
-        "base_link": [
-            "pelvis",
-            0,
-            10,
-            [
+    "ik_match_table": {
+        "head_pitch_link": {
+            "human_frame_name": "head",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+            ]
+        },
+        "base_link": {
+            "human_frame_name": "pelvis",
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
                 0.5,
                 -0.5,
                 -0.5,
                 -0.5
             ]
-        ],
-        "l_hip_roll_link": [
-            "left_hip",
-            0,
-            10,
-            [
+        },
+        "l_hip_roll_link": {
+            "human_frame_name": "left_hip",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.4267755048530407,
                 -0.5637931078484661,
                 -0.5637931078484661,
                 -0.4267755048530407
             ]
-        ],
-        "l_calf_link": [
-            "left_knee",
-            0,
-            10,
-            [
+        },
+        "l_calf_link": {
+            "human_frame_name": "left_knee",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.5,
                 -0.5,
                 -0.5,
                 -0.5
             ]
-        ],
-        "l_ankle_roll_link": [
-            "left_foot",
-            100,
-            50,
-            [
+        },
+        "l_ankle_roll_link": {
+            "human_frame_name": "left_foot",
+            "position": [
                 0.0,
                 0.05,
                 0.0
             ],
-            [
+            "rotation": [
                 0.5,
                 -0.5,
                 -0.5,
                 -0.5
             ]
-        ],
-        "r_hip_roll_link": [
-            "right_hip",
-            0,
-            10,
-            [
+        },
+        "r_hip_roll_link": {
+            "human_frame_name": "right_hip",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.4267755048530407,
                 -0.5637931078484661,
                 -0.5637931078484661,
                 -0.4267755048530407
             ]
-        ],
-        "r_calf_link": [
-            "right_knee",
-            0,
-            10,
-            [
+        },
+        "r_calf_link": {
+            "human_frame_name": "right_knee",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.5,
                 -0.5,
                 -0.5,
                 -0.5
             ]
-        ],
-        "r_ankle_roll_link": [
-            "right_foot",
-            100,
-            50,
-            [
+        },
+        "r_ankle_roll_link": {
+            "human_frame_name": "right_foot",
+            "position": [
                 0.0,
                 -0.05,
                 0.0
             ],
-            [
+            "rotation": [
                 0.5,
                 -0.5,
                 -0.5,
                 -0.5
             ]
-        ],
-        "waist_link": [
-            "spine3",
-            0,
-            100,
-            [
+        },
+        "waist_link": {
+            "human_frame_name": "spine3",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.5,
                 -0.5,
                 -0.5,
                 -0.5
             ]
-        ],
-        "l_shoulder_roll_link": [
-            "left_shoulder",
-            0,
-            10,
-            [
+        },
+        "l_shoulder_roll_link": {
+            "human_frame_name": "left_shoulder",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.70710678,
                 0.0,
                 -0.70710678,
                 0.0
             ]
-        ],
-        "l_elbow_link": [
-            "left_elbow",
-            0,
-            10,
-            [
+        },
+        "l_elbow_link": {
+            "human_frame_name": "left_elbow",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.70710678,
                 0.0,
                 -0.70710678,
                 0.0
             ]
-        ],
-        "l_wrist_link": [
-            "left_wrist",
-            0,
-            10,
-            [
+        },
+        "l_wrist_link": {
+            "human_frame_name": "left_wrist",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.70710678,
                 0.0,
                 -0.70710678,
                 0.0
             ]
-        ],
-        "r_shoulder_roll_link": [
-            "right_shoulder",
-            0,
-            10,
-            [
+        },
+        "r_shoulder_roll_link": {
+            "human_frame_name": "right_shoulder",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.0,
                 0.70710678,
                 0.0,
                 0.70710678
             ]
-        ],
-        "r_elbow_link": [
-            "right_elbow",
-            0,
-            10,
-            [
+        },
+        "r_elbow_link": {
+            "human_frame_name": "right_elbow",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.0,
                 0.70710678,
                 0.0,
                 0.70710678
             ]
-        ],
-        "r_wrist_link": [
-            "right_wrist",
-            0,
-            10,
-            [
+        },
+        "r_wrist_link": {
+            "human_frame_name": "right_wrist",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.0,
                 0.70710678,
                 0.0,
                 0.70710678
             ]
-        ]
+        }
     },
-   "ik_match_table2": {
-        "head_pitch_link": [
-            "head",
-            10,
-            5,
-            [0.0, 0.0, 0.0],
-            [-0.5, 0.5, 0.5, 0.5]
-        ],
-        "base_link": [
-            "pelvis",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.5,
-                -0.5,
-                -0.5,
-                -0.5
-            ]
-        ],
-        "l_hip_roll_link": [
-            "left_hip",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.4267755048530407,
-                -0.5637931078484661,
-                -0.5637931078484661,
-                -0.4267755048530407
-            ]
-
-        ],
-        "l_calf_link": [
-            "left_knee",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.5,
-                -0.5,
-                -0.5,
-                -0.5
-            ]
-        ],
-        "l_ankle_roll_link": [
-            "left_foot",
-            100,
-            50,
-            [
-                0.0,
-                0.05,
-                0.0
-            ],
-            [ -0.5, 0.5, 0.5, 0.5 ]
-        ],
-        "r_hip_roll_link": [
-            "right_hip",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.4267755048530407,
-                -0.5637931078484661,
-                -0.5637931078484661,
-                -0.4267755048530407
-            ]
-        ],
-        "r_calf_link": [
-            "right_knee",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.5,
-                -0.5,
-                -0.5,
-                -0.5
-            ]
-        ],
-        "r_ankle_roll_link": [
-            "right_foot",
-            100,
-            50,
-            [
-                0.0,
-                -0.05,
-                0.0
-            ],
-            [ -0.5, 0.5, 0.5, 0.5 ]
-        ],
-        "waist_link": [
-            "spine3",
-            0,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.5,
-                -0.5,
-                -0.5,
-                -0.5
-            ]
-        ],
-        "l_shoulder_roll_link": [
-            "left_shoulder",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.70710678,
-                0.0,
-                -0.70710678,
-                0.0
-            ]
-        ],
-        "l_elbow_link": [
-            "left_elbow",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.70710678,
-                0.0,
-                -0.70710678,
-                0.0
-            ]
-        ],
-        "l_wrist_link": [
-            "left_wrist",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.70710678,
-                0.0,
-                -0.70710678,
-                0.0
-            ]
-        ],
-        "r_shoulder_roll_link": [
-            "right_shoulder",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.0,
-                0.70710678,
-                0.0,
-                0.70710678
-            ]
-        ],
-        "r_elbow_link": [
-            "right_elbow",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.0,
-                0.70710678,
-                0.0,
-                0.70710678
-            ]
-        ],
-        "r_wrist_link": [
-            "right_wrist",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.0,
-                0.70710678,
-                0.0,
-                0.70710678
-            ]
-        ]
-    }
+    "task_weights": [
+        {
+            "head_pitch_link": {
+                "position": 0,
+                "rotation": 10
+            },
+            "base_link": {
+                "position": 0,
+                "rotation": 10
+            },
+            "l_hip_roll_link": {
+                "position": 0,
+                "rotation": 10
+            },
+            "l_calf_link": {
+                "position": 0,
+                "rotation": 10
+            },
+            "l_ankle_roll_link": {
+                "position": 100,
+                "rotation": 50
+            },
+            "r_hip_roll_link": {
+                "position": 0,
+                "rotation": 10
+            },
+            "r_calf_link": {
+                "position": 0,
+                "rotation": 10
+            },
+            "r_ankle_roll_link": {
+                "position": 100,
+                "rotation": 50
+            },
+            "waist_link": {
+                "position": 0,
+                "rotation": 100
+            },
+            "l_shoulder_roll_link": {
+                "position": 0,
+                "rotation": 10
+            },
+            "l_elbow_link": {
+                "position": 0,
+                "rotation": 10
+            },
+            "l_wrist_link": {
+                "position": 0,
+                "rotation": 10
+            },
+            "r_shoulder_roll_link": {
+                "position": 0,
+                "rotation": 10
+            },
+            "r_elbow_link": {
+                "position": 0,
+                "rotation": 10
+            },
+            "r_wrist_link": {
+                "position": 0,
+                "rotation": 10
+            }
+        },
+        {
+            "head_pitch_link": {
+                "position": 10,
+                "rotation": 5
+            },
+            "base_link": {
+                "position": 10,
+                "rotation": 5
+            },
+            "l_hip_roll_link": {
+                "position": 10,
+                "rotation": 5
+            },
+            "l_calf_link": {
+                "position": 10,
+                "rotation": 5
+            },
+            "l_ankle_roll_link": {
+                "position": 100,
+                "rotation": 50
+            },
+            "r_hip_roll_link": {
+                "position": 10,
+                "rotation": 5
+            },
+            "r_calf_link": {
+                "position": 10,
+                "rotation": 5
+            },
+            "r_ankle_roll_link": {
+                "position": 100,
+                "rotation": 50
+            },
+            "waist_link": {
+                "position": 0,
+                "rotation": 10
+            },
+            "l_shoulder_roll_link": {
+                "position": 10,
+                "rotation": 5
+            },
+            "l_elbow_link": {
+                "position": 10,
+                "rotation": 5
+            },
+            "l_wrist_link": {
+                "position": 10,
+                "rotation": 5
+            },
+            "r_shoulder_roll_link": {
+                "position": 10,
+                "rotation": 5
+            },
+            "r_elbow_link": {
+                "position": 10,
+                "rotation": 5
+            },
+            "r_wrist_link": {
+                "position": 10,
+                "rotation": 5
+            }
+        }
+    ]
 }

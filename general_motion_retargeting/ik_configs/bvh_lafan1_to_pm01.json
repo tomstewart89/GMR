@@ -3,19 +3,15 @@
     "human_root_name": "Hips",
     "ground_height": 0.0,
     "human_height_assumption": 1.8,
-    "use_ik_match_table1": true,
-    "use_ik_match_table2": true,
     "human_scale_table": {
         "Hips": 0.85,
         "Spine2": 0.85,
-
         "LeftUpLeg": 0.85,
         "RightUpLeg": 0.85,
         "LeftLeg": 0.85,
         "RightLeg": 0.85,
         "LeftFootMod": 0.85,
         "RightFootMod": 0.85,
-
         "LeftArm": 0.8,
         "RightArm": 0.8,
         "LeftForeArm": 0.8,
@@ -23,457 +19,320 @@
         "LeftHand": 0.8,
         "RightHand": 0.8
     },
-
-    "ik_match_table1": {
-        "LINK_BASE": [
-            "Hips",
-            0,
-            10,
-            [
+    "ik_match_table": {
+        "LINK_BASE": {
+            "human_frame_name": "Hips",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.5,
                 0.5,
                 0.5,
                 0.5
             ]
-        ],
-        "LINK_HIP_ROLL_L": [
-            "LeftUpLeg",
-            0,
-            10,
-            [
+        },
+        "LINK_HIP_ROLL_L": {
+            "human_frame_name": "LeftUpLeg",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.5,
                 0.5,
                 0.5,
                 -0.5
             ]
-        ],
-        "LINK_KNEE_PITCH_L": [
-            "LeftLeg",
-            0,
-            10,
-            [
+        },
+        "LINK_KNEE_PITCH_L": {
+            "human_frame_name": "LeftLeg",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.5,
                 0.5,
                 0.5,
                 -0.5
             ]
-        ],
-        "LINK_ANKLE_ROLL_L": [
-            "LeftFootMod",
-            100,
-            10,
-            [
+        },
+        "LINK_ANKLE_ROLL_L": {
+            "human_frame_name": "LeftFootMod",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.70710678,
                 0.70710678,
                 0.0,
                 0.0
             ]
-        ],
-        "LINK_HIP_ROLL_R": [
-            "RightUpLeg",
-            0,
-            10,
-            [
+        },
+        "LINK_HIP_ROLL_R": {
+            "human_frame_name": "RightUpLeg",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.5,
                 0.5,
                 0.5,
                 -0.5
             ]
-        ],
-        "LINK_KNEE_PITCH_R": [
-            "RightLeg",
-            0,
-            10,
-            [
+        },
+        "LINK_KNEE_PITCH_R": {
+            "human_frame_name": "RightLeg",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.5,
                 0.5,
                 0.5,
                 -0.5
             ]
-        ],
-        "LINK_ANKLE_ROLL_R": [
-            "RightFootMod",
-            100,
-            10,
-            [
+        },
+        "LINK_ANKLE_ROLL_R": {
+            "human_frame_name": "RightFootMod",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.70710678,
                 0.70710678,
                 0.0,
                 0.0
             ]
-        ],
-        "LINK_TORSO_YAW": [
-            "Spine2",
-            0,
-            10,
-            [
+        },
+        "LINK_TORSO_YAW": {
+            "human_frame_name": "Spine2",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.5,
                 0.5,
                 0.5,
                 0.5
             ]
-        ],
-        "LINK_SHOULDER_ROLL_L": [
-            "LeftArm",
-            0,
-            10,
-            [
+        },
+        "LINK_SHOULDER_ROLL_L": {
+            "human_frame_name": "LeftArm",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.5,
                 0.5,
                 -0.5,
                 -0.5
             ]
-        ],
-        "LINK_ELBOW_PITCH_L": [
-            "LeftForeArm",
-            0,
-            10,
-            [
+        },
+        "LINK_ELBOW_PITCH_L": {
+            "human_frame_name": "LeftForeArm",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.5,
                 -0.5,
                 0.5,
                 0.5
             ]
-        ],
-        "LINK_ELBOW_END_L": [
-            "LeftHand",
-            0,
-            10,
-            [
+        },
+        "LINK_ELBOW_END_L": {
+            "human_frame_name": "LeftHand",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.5,
--0.5,
-0.5,
-0.5
+                -0.5,
+                0.5,
+                0.5
             ]
-        ],
-        "LINK_SHOULDER_ROLL_R": [
-            "RightArm",
-            0,
-            10,
-            [
+        },
+        "LINK_SHOULDER_ROLL_R": {
+            "human_frame_name": "RightArm",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.5,
                 0.5,
                 -0.5,
                 -0.5
             ]
-        ],
-        "LINK_ELBOW_PITCH_R": [
-            "RightForeArm",
-            0,
-            10,
-            [
+        },
+        "LINK_ELBOW_PITCH_R": {
+            "human_frame_name": "RightForeArm",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.5,
                 -0.5,
                 0.5,
                 0.5
             ]
-        ],
-        "LINK_ELBOW_END_R": [
-            "RightHand",
-            0,
-            10,
-            [
+        },
+        "LINK_ELBOW_END_R": {
+            "human_frame_name": "RightHand",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
-            -0.5,
-            -0.5,
-            0.5,
-            0.5
+            "rotation": [
+                -0.5,
+                -0.5,
+                0.5,
+                0.5
             ]
-        ]
+        }
     },
-    "ik_match_table2": {
-        "LINK_BASE": [
-            "Hips",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.5,
-                0.5,
-                0.5,
-                0.5
-            ]
-        ],
-        "LINK_HIP_ROLL_L": [
-            "LeftUpLeg",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.5,
-                0.5,
-                0.5,
-                -0.5
-            ]
-        ],
-        "LINK_KNEE_PITCH_L": [
-            "LeftLeg",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.5,
-                0.5,
-                0.5,
-                -0.5
-            ]
-        ],
-        "LINK_ANKLE_ROLL_L": [
-            "LeftFootMod",
-            100,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.70710678,
-                0.70710678,
-                0.0,
-                0.0
-            ]
-        ],
-        "LINK_HIP_ROLL_R": [
-            "RightUpLeg",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.5,
-                0.5,
-                0.5,
-                -0.5
-            ]
-        ],
-        "LINK_KNEE_PITCH_R": [
-            "RightLeg",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.5,
-                0.5,
-                0.5,
-                -0.5
-            ]
-        ],
-        "LINK_ANKLE_ROLL_R": [
-            "RightFootMod",
-            100,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.70710678,
-                0.70710678,
-                0.0,
-                0.0
-            ]
-        ],
-        "LINK_TORSO_YAW": [
-            "Spine2",
-            0,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.5,
-                0.5,
-                0.5,
-                0.5
-            ]
-        ],
-        "LINK_SHOULDER_ROLL_L": [
-            "LeftArm",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.5,
-                0.5,
-                -0.5,
-                -0.5
-            ]
-        ],
-        "LINK_ELBOW_PITCH_L": [
-            "LeftForeArm",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.5,
--0.5,
-0.5,
-0.5
-            ]
-        ],
-        "LINK_ELBOW_END_L": [
-            "LeftHand",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.5,
--0.5,
-0.5,
-0.5
-            ]
-        ],
-        "LINK_SHOULDER_ROLL_R": [
-            "RightArm",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.5,
-                0.5,
-                -0.5,
-                -0.5
-            ]
-        ],
-        "LINK_ELBOW_PITCH_R": [
-            "RightForeArm",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.5,
-            -0.5,
-            0.5,
-            0.5
-            ]
-        ],
-        "LINK_ELBOW_END_R": [
-            "RightHand",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.5,
-            -0.5,
-            0.5,
-            0.5
-            ]
-        ]
-    }
+    "task_weights": [
+        {
+            "LINK_BASE": {
+                "position": 0,
+                "rotation": 10
+            },
+            "LINK_HIP_ROLL_L": {
+                "position": 0,
+                "rotation": 10
+            },
+            "LINK_KNEE_PITCH_L": {
+                "position": 0,
+                "rotation": 10
+            },
+            "LINK_ANKLE_ROLL_L": {
+                "position": 100,
+                "rotation": 10
+            },
+            "LINK_HIP_ROLL_R": {
+                "position": 0,
+                "rotation": 10
+            },
+            "LINK_KNEE_PITCH_R": {
+                "position": 0,
+                "rotation": 10
+            },
+            "LINK_ANKLE_ROLL_R": {
+                "position": 100,
+                "rotation": 10
+            },
+            "LINK_TORSO_YAW": {
+                "position": 0,
+                "rotation": 10
+            },
+            "LINK_SHOULDER_ROLL_L": {
+                "position": 0,
+                "rotation": 10
+            },
+            "LINK_ELBOW_PITCH_L": {
+                "position": 0,
+                "rotation": 10
+            },
+            "LINK_ELBOW_END_L": {
+                "position": 0,
+                "rotation": 10
+            },
+            "LINK_SHOULDER_ROLL_R": {
+                "position": 0,
+                "rotation": 10
+            },
+            "LINK_ELBOW_PITCH_R": {
+                "position": 0,
+                "rotation": 10
+            },
+            "LINK_ELBOW_END_R": {
+                "position": 0,
+                "rotation": 10
+            }
+        },
+        {
+            "LINK_BASE": {
+                "position": 10,
+                "rotation": 5
+            },
+            "LINK_HIP_ROLL_L": {
+                "position": 10,
+                "rotation": 5
+            },
+            "LINK_KNEE_PITCH_L": {
+                "position": 10,
+                "rotation": 5
+            },
+            "LINK_ANKLE_ROLL_L": {
+                "position": 100,
+                "rotation": 10
+            },
+            "LINK_HIP_ROLL_R": {
+                "position": 10,
+                "rotation": 5
+            },
+            "LINK_KNEE_PITCH_R": {
+                "position": 10,
+                "rotation": 5
+            },
+            "LINK_ANKLE_ROLL_R": {
+                "position": 100,
+                "rotation": 10
+            },
+            "LINK_TORSO_YAW": {
+                "position": 0,
+                "rotation": 10
+            },
+            "LINK_SHOULDER_ROLL_L": {
+                "position": 10,
+                "rotation": 5
+            },
+            "LINK_ELBOW_PITCH_L": {
+                "position": 10,
+                "rotation": 5
+            },
+            "LINK_ELBOW_END_L": {
+                "position": 10,
+                "rotation": 5
+            },
+            "LINK_SHOULDER_ROLL_R": {
+                "position": 10,
+                "rotation": 5
+            },
+            "LINK_ELBOW_PITCH_R": {
+                "position": 10,
+                "rotation": 5
+            },
+            "LINK_ELBOW_END_R": {
+                "position": 10,
+                "rotation": 5
+            }
+        }
+    ]
 }

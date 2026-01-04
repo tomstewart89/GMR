@@ -3,19 +3,15 @@
     "human_root_name": "Hips",
     "ground_height": 0.0,
     "human_height_assumption": 1.8,
-    "use_ik_match_table1": true,
-    "use_ik_match_table2": true,
     "human_scale_table": {
         "Hips": 0.35,
         "Spine2": 0.35,
-
         "LeftUpLeg": 0.35,
         "RightUpLeg": 0.35,
         "LeftLeg": 0.35,
         "RightLeg": 0.35,
         "LeftFootMod": 0.35,
         "RightFootMod": 0.35,
-
         "LeftArm": 0.35,
         "RightArm": 0.35,
         "LeftForeArm": 0.35,
@@ -23,457 +19,320 @@
         "LeftHand": 0.35,
         "RightHand": 0.35
     },
-
-    "ik_match_table1": {
-        "waist_link": [
-            "Hips",
-            0,
-            10,
-            [
+    "ik_match_table": {
+        "waist_link": {
+            "human_frame_name": "Hips",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.5,
                 0.5,
                 0.5,
                 0.5
             ]
-        ],
-        "left_hip_pitch_link": [
-            "LeftUpLeg",
-            0,
-            10,
-            [
+        },
+        "left_hip_pitch_link": {
+            "human_frame_name": "LeftUpLeg",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.5637931078484661,
                 0.5637931078484663,
                 0.4267755048530408,
                 0.4267755048530407
             ]
-        ],
-        "left_calf_link": [
-            "LeftLeg",
-            0,
-            10,
-            [
+        },
+        "left_calf_link": {
+            "human_frame_name": "LeftLeg",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.7071067811865476,
                 0.0,
                 0.0,
                 -0.7071067811865476
             ]
-        ],
-        "left_toe_link": [
-            "LeftFootMod",
-            100,
-            10,
-            [
+        },
+        "left_toe_link": {
+            "human_frame_name": "LeftFootMod",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.5,
                 0.5,
                 0.5,
                 0.5
             ]
-        ],
-        "right_hip_pitch_link": [
-            "RightUpLeg",
-            0,
-            10,
-            [
+        },
+        "right_hip_pitch_link": {
+            "human_frame_name": "RightUpLeg",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
-                0.4267755048530407,
-            -0.4267755048530407,
-            0.5637931078484663,
-            -0.5637931078484663
-            ]
-        ],
-        "right_calf_link": [
-            "RightLeg",
-            0,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.0,
-                -0.7071067811865476,
-                0.7071067811865476,
-                0.0
-            ]
-        ],
-        "right_toe_link": [
-            "RightFootMod",
-            100,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.5,
-                0.5,
-                0.5,
-                0.5
-            ]
-        ],
-        "torso": [
-            "Spine2",
-            0,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.5,
-                0.5,
-                0.5,
-                0.5
-            ]
-        ],
-        "spur_1m_24t_driven": [
-            "LeftArm",
-            0,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.7071067811865476,
-                0.0,
-                -0.7071067811865476,
-                0.0
-            ]
-        ],
-        "spur_1m_24t_driven_2": [
-            "LeftForeArm",
-            0,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.5,
-                0.5,
-                -0.5,
-                0.5
-            ]
-        ],
-        "hand": [
-            "LeftHand",
-            0,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.5,
-                -0.5,
-                -0.5,
-                0.5
-            ]
-        ],
-        "spur_1m_24t_driven_4": [
-            "RightArm",
-            0,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.0,
-                0.7071067811865476,
-                0.0,
-                0.7071067811865476
-            ]
-        ],
-        "spur_1m_24t_driven_5": [
-            "RightForeArm",
-            0,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.0,
-                0.7071067811865476,
-                0.0,
-                0.7071067811865476
-            ]
-        ],
-        "hand_2": [
-            "RightHand",
-            0,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.5,
-                -0.5,
-                0.5,
-                0.5
-            ]
-        ]
-    },
-    "ik_match_table2": {
-        "waist_link": [
-            "Hips",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                -0.5,
-                0.5,
-                0.5,
-                0.5
-            ]
-        ],
-        "left_hip_pitch_link": [
-            "LeftUpLeg",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.5637931078484661,
-                0.5637931078484663,
-                0.4267755048530408,
-                0.4267755048530407
-            ]
-        ],
-        "left_calf_link": [
-            "LeftLeg",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.7071067811865476,
-                0.0,
-                0.0,
-                -0.7071067811865476
-            ]
-        ],
-        "left_toe_link": [
-            "LeftFootMod",
-            100,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                0.5,
-                0.5,
-                0.5,
-                0.5
-            ]
-        ],
-        "right_hip_pitch_link": [
-            "RightUpLeg",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
+            "rotation": [
                 0.4267755048530407,
                 -0.4267755048530407,
                 0.5637931078484663,
                 -0.5637931078484663
             ]
-        ],
-        "right_calf_link": [
-            "RightLeg",
-            10,
-            5,
-            [
+        },
+        "right_calf_link": {
+            "human_frame_name": "RightLeg",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.0,
                 -0.7071067811865476,
                 0.7071067811865476,
                 0.0
             ]
-        ],
-        "right_toe_link": [
-            "RightFootMod",
-            100,
-            10,
-            [
+        },
+        "right_toe_link": {
+            "human_frame_name": "RightFootMod",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.5,
                 0.5,
                 0.5,
                 0.5
             ]
-        ],
-        "torso": [
-            "Spine2",
-            0,
-            10,
-            [
+        },
+        "torso": {
+            "human_frame_name": "Spine2",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.5,
                 0.5,
                 0.5,
                 0.5
             ]
-        ],
-        "spur_1m_24t_driven": [
-            "LeftArm",
-            10,
-            5,
-            [
+        },
+        "spur_1m_24t_driven": {
+            "human_frame_name": "LeftArm",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.7071067811865476,
                 0.0,
                 -0.7071067811865476,
                 0.0
             ]
-        ],
-        "spur_1m_24t_driven_2": [
-            "LeftForeArm",
-            10,
-            5,
-            [
+        },
+        "spur_1m_24t_driven_2": {
+            "human_frame_name": "LeftForeArm",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.5,
                 0.5,
                 -0.5,
                 0.5
             ]
-        ],
-        "hand": [
-            "LeftHand",
-            10,
-            5,
-            [
+        },
+        "hand": {
+            "human_frame_name": "LeftHand",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 -0.5,
                 -0.5,
                 -0.5,
                 0.5
             ]
-        ],
-        "spur_1m_24t_driven_4": [
-            "RightArm",
-            10,
-            5,
-            [
+        },
+        "spur_1m_24t_driven_4": {
+            "human_frame_name": "RightArm",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.0,
                 0.7071067811865476,
                 0.0,
                 0.7071067811865476
             ]
-        ],
-        "spur_1m_24t_driven_5": [
-            "RightForeArm",
-            10,
-            5,
-            [
+        },
+        "spur_1m_24t_driven_5": {
+            "human_frame_name": "RightForeArm",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.0,
                 0.7071067811865476,
                 0.0,
                 0.7071067811865476
             ]
-        ],
-        "hand_2": [
-            "RightHand",
-            10,
-            5,
-            [
+        },
+        "hand_2": {
+            "human_frame_name": "RightHand",
+            "position": [
                 0.0,
                 0.0,
                 0.0
             ],
-            [
+            "rotation": [
                 0.5,
                 -0.5,
                 0.5,
                 0.5
             ]
-        ]
-    }
+        }
+    },
+    "task_weights": [
+        {
+            "waist_link": {
+                "position": 0,
+                "rotation": 10
+            },
+            "left_hip_pitch_link": {
+                "position": 0,
+                "rotation": 10
+            },
+            "left_calf_link": {
+                "position": 0,
+                "rotation": 10
+            },
+            "left_toe_link": {
+                "position": 100,
+                "rotation": 10
+            },
+            "right_hip_pitch_link": {
+                "position": 0,
+                "rotation": 10
+            },
+            "right_calf_link": {
+                "position": 0,
+                "rotation": 10
+            },
+            "right_toe_link": {
+                "position": 100,
+                "rotation": 10
+            },
+            "torso": {
+                "position": 0,
+                "rotation": 10
+            },
+            "spur_1m_24t_driven": {
+                "position": 0,
+                "rotation": 10
+            },
+            "spur_1m_24t_driven_2": {
+                "position": 0,
+                "rotation": 10
+            },
+            "hand": {
+                "position": 0,
+                "rotation": 10
+            },
+            "spur_1m_24t_driven_4": {
+                "position": 0,
+                "rotation": 10
+            },
+            "spur_1m_24t_driven_5": {
+                "position": 0,
+                "rotation": 10
+            },
+            "hand_2": {
+                "position": 0,
+                "rotation": 10
+            }
+        },
+        {
+            "waist_link": {
+                "position": 10,
+                "rotation": 5
+            },
+            "left_hip_pitch_link": {
+                "position": 10,
+                "rotation": 5
+            },
+            "left_calf_link": {
+                "position": 10,
+                "rotation": 5
+            },
+            "left_toe_link": {
+                "position": 100,
+                "rotation": 10
+            },
+            "right_hip_pitch_link": {
+                "position": 10,
+                "rotation": 5
+            },
+            "right_calf_link": {
+                "position": 10,
+                "rotation": 5
+            },
+            "right_toe_link": {
+                "position": 100,
+                "rotation": 10
+            },
+            "torso": {
+                "position": 0,
+                "rotation": 10
+            },
+            "spur_1m_24t_driven": {
+                "position": 10,
+                "rotation": 5
+            },
+            "spur_1m_24t_driven_2": {
+                "position": 10,
+                "rotation": 5
+            },
+            "hand": {
+                "position": 10,
+                "rotation": 5
+            },
+            "spur_1m_24t_driven_4": {
+                "position": 10,
+                "rotation": 5
+            },
+            "spur_1m_24t_driven_5": {
+                "position": 10,
+                "rotation": 5
+            },
+            "hand_2": {
+                "position": 10,
+                "rotation": 5
+            }
+        }
+    ]
 }
