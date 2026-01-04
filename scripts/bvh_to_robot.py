@@ -28,13 +28,6 @@ if __name__ == "__main__":
     )
 
     parser.add_argument(
-        "--loop",
-        default=False,
-        action="store_true",
-        help="Loop the motion.",
-    )
-
-    parser.add_argument(
         "--robot",
         choices=[
             "unitree_g1",
@@ -102,16 +95,12 @@ if __name__ == "__main__":
         actual_human_height=actual_human_height,
     )
 
-    motion_fps = args.motion_fps
-
     robot_motion_viewer = RobotMotionViewer(
         robot_type=args.robot,
-        motion_fps=motion_fps,
+        motion_fps=args.motion_fps,
         transparent_robot=0,
         record_video=args.record_video,
         video_path=args.video_path,
-        # video_width=2080,
-        # video_height=1170
     )
 
     # FPS measurement variables
@@ -119,15 +108,9 @@ if __name__ == "__main__":
     fps_start_time = time.time()
     fps_display_interval = 2.0  # Display FPS every 2 seconds
 
-    print(f"mocap_frame_rate: {motion_fps}")
+    print(f"mocap_frame_rate: {args.motion_fps}")
 
-    # Create tqdm progress bar for the total number of frames
-    pbar = tqdm(total=len(lafan1_data_frames), desc="Retargeting")
-
-    # Start the viewer
-    i = 0
-
-    while True:
+    for frame in tqdm(lafan1_data_frames, desc="Retargeting"):
 
         # FPS measurement
         fps_counter += 1
@@ -138,51 +121,18 @@ if __name__ == "__main__":
             fps_counter = 0
             fps_start_time = current_time
 
-        # Update progress bar
-        pbar.update(1)
-
-        # Update task targets.
-        smplx_data = lafan1_data_frames[i]
-
         # retarget
-        qpos = retargeter.retarget(smplx_data)
-
-        # visualize
-        # build human->robot frame mapping from IK match tables
-        human_to_robot_map = {}
-        try:
-            for frame_name, entry in retargeter.ik_match_table1.items():
-                human_name = entry[0]
-                human_to_robot_map[human_name] = frame_name
-        except Exception:
-            pass
-        try:
-            for frame_name, entry in retargeter.ik_match_table2.items():
-                human_name = entry[0]
-                human_to_robot_map[human_name] = frame_name
-        except Exception:
-            pass
+        qpos = retargeter.retarget(frame)
 
         robot_motion_viewer.step(
             root_pos=qpos[:3],
             root_rot=qpos[3:7],
             dof_pos=qpos[7:],
             human_motion_data=retargeter.scaled_human_data,
-            robot_frame_map=human_to_robot_map,
+            robot_frame_map=retargeter.robot_to_human_map,
             rate_limit=args.rate_limit,
             follow_camera=True,
-            # human_pos_offset=np.array([0.0, 0.0, 0.0])
         )
-
-        if i == 10:
-            pass
-
-        if args.loop:
-            i = (i + 1) % len(lafan1_data_frames)
-        else:
-            i += 1
-            if i >= len(lafan1_data_frames):
-                break
 
         if args.save_path is not None:
             qpos_list.append(qpos)
@@ -198,7 +148,7 @@ if __name__ == "__main__":
         body_names = None
 
         motion_data = {
-            "fps": motion_fps,
+            "fps": args.motion_fps,
             "root_pos": root_pos,
             "root_rot": root_rot,
             "dof_pos": dof_pos,
@@ -208,8 +158,5 @@ if __name__ == "__main__":
         with open(args.save_path, "wb") as f:
             pickle.dump(motion_data, f)
         print(f"Saved to {args.save_path}")
-
-    # Close progress bar
-    pbar.close()
 
     robot_motion_viewer.close()
