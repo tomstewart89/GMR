@@ -1,6 +1,4 @@
 import argparse
-import pathlib
-import time
 from general_motion_retargeting import GeneralMotionRetargeting as GMR
 from general_motion_retargeting import RobotMotionViewer
 from general_motion_retargeting.utils.lafan1 import load_bvh_file
@@ -13,18 +11,9 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--bvh_file",
-        help="BVH motion file to load.",
-        required=True,
-        type=str,
+        "--bvh_file", help="BVH motion file to load.", required=True, type=str
     )
-
-    parser.add_argument(
-        "--format",
-        choices=["lafan1", "nokov"],
-        default="lafan1",
-    )
-
+    parser.add_argument("--format", choices=["lafan1", "nokov"], default="lafan1")
     parser.add_argument(
         "--robot",
         choices=[
@@ -39,39 +28,16 @@ if __name__ == "__main__":
         ],
         default="unitree_g1",
     )
-
+    parser.add_argument("--record_video", action="store_true", default=False)
+    parser.add_argument("--video_path", type=str, default="videos/example.mp4")
+    parser.add_argument("--rate_limit", action="store_true", default=False)
     parser.add_argument(
-        "--record_video",
-        action="store_true",
-        default=False,
+        "--save_path", default=None, help="Path to save the robot motion."
     )
-
-    parser.add_argument(
-        "--video_path",
-        type=str,
-        default="videos/example.mp4",
-    )
-
-    parser.add_argument(
-        "--rate_limit",
-        action="store_true",
-        default=False,
-    )
-
-    parser.add_argument(
-        "--save_path",
-        default=None,
-        help="Path to save the robot motion.",
-    )
-
-    parser.add_argument(
-        "--motion_fps",
-        default=30,
-        type=int,
-    )
+    parser.add_argument("--motion_fps", default=30, type=int)
 
     args = parser.parse_args(
-        "--bvh_file /home/tom/projects/ubisoft-laforge-animation-dataset/lafan1/lafan1/walk1_subject1.bvh --robot skeleton".split(
+        "--bvh_file /home/tom/projects/ubisoft-laforge-animation-dataset/lafan1/lafan1/sprint1_subject2.bvh --robot skeleton --save_path out.pkl".split(
             " "
         )
     )

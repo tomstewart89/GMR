@@ -2,7 +2,7 @@
     "robot_root_name": "pelvis",
     "human_root_name": "Hips",
     "ground_height": 0.0,
-    "human_height_assumption": 1.8,
+    "human_height_assumption": 1.7,
     "human_scale_table": {
         "Hips": 1.0,
         "Spine2": 1.0,
@@ -121,8 +121,8 @@
         "torso": {
             "human_frame_name": "Spine2",
             "position": [
-                0.0,
                 -0.2,
+                0.0,
                 0.0
             ],
             "rotation": [
@@ -306,7 +306,7 @@
                 "rotation": 10
             },
             "torso": {
-                "position": 0,
+                "position": 5,
                 "rotation": 10
             },
             "humerus_r": {

@@ -188,23 +188,18 @@ class GeneralMotionRetargeting:
         return human_data
 
     def scale_human_data(self, human_data):
-        human_data_local = {}
         root_pos, root_quat = human_data[self.human_root_name]
 
         # scale root
         scaled_root_pos = self.human_scale_table[self.human_root_name] * root_pos
 
         # scale other body parts in local frame
-        for body_name in human_data:
-            if body_name not in self.human_scale_table:
-                continue
-            if body_name == self.human_root_name:
-                continue
-            else:
-                # transform to local frame (only position)
-                human_data_local[body_name] = (
-                    human_data[body_name][0] - root_pos
-                ) * self.human_scale_table[body_name]
+        human_data_local = {
+            body_name: (human_data[body_name][0] - root_pos)
+            * self.human_scale_table[body_name]
+            for body_name in self.human_scale_table
+            if body_name != self.human_root_name
+        }
 
         # transform the human data back to the global frame
         human_data_global = {self.human_root_name: (scaled_root_pos, root_quat)}

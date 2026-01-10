@@ -131,7 +131,7 @@ class RobotMotionViewer:
         dof_pos,
         # human data
         human_motion_data=None,
-        show_human_body_name=True,
+        show_human_body_name=False,
         # scale for human point visualization
         human_point_scale=0.1,
         # human pos offset add for visualization
@@ -192,7 +192,9 @@ class RobotMotionViewer:
                     except Exception:
                         # fallback: try mj name lookup
                         try:
-                            bid = mj.mj_name2id(self.model, mj.mjtObj.mjOBJ_BODY, robot_body_name)
+                            bid = mj.mj_name2id(
+                                self.model, mj.mjtObj.mjOBJ_BODY, robot_body_name
+                            )
                         except Exception:
                             continue
 
@@ -206,7 +208,7 @@ class RobotMotionViewer:
                         robot_mat,
                         self.viewer,
                         human_point_scale * 0.8,
-                        joint_name=robot_body_name,
+                        joint_name=robot_body_name if show_human_body_name else None,
                     )
 
                     # draw a connector line from human visual pos to robot pos
