@@ -47,6 +47,44 @@ def load_smplx_file(smplx_file, smplx_body_model_path):
     return smplx_data, body_model, smplx_output, human_height
 
 
+def load_tram_file(tram_file, smplx_body_model_path):
+
+    tram_data = np.load(tram_file, allow_pickle=True).item()
+
+    num_frames = tram_data["pred_pose"].shape[0]
+
+    rotmat = R.from_matrix(tram_data["pred_rotmat"].numpy().reshape(-1, 3, 3))
+    rotvec = rotmat.as_rotvec().reshape(-1, 24, 3)
+
+    betas = torch.cat([tram_data["pred_shape"].mean(axis=0), torch.zeros(6)]).unsqueeze(
+        0
+    )
+    pose_body = torch.Tensor(rotvec[:, 1:-2])
+    root_orient = torch.Tensor(rotvec[:, :1])
+    trans = tram_data["pred_trans"].squeeze()
+
+    body_model = smplx.create(
+        smplx_body_model_path, "smplx", gender="neutral", use_pca=False
+    )
+
+    smplx_output = body_model.forward(
+        betas=betas,
+        body_pose=pose_body,
+        global_orient=root_orient,
+        transl=trans,
+        left_hand_pose=torch.zeros(num_frames, 45).float(),
+        right_hand_pose=torch.zeros(num_frames, 45).float(),
+        jaw_pose=torch.zeros(num_frames, 3).float(),
+        leye_pose=torch.zeros(num_frames, 3).float(),
+        reye_pose=torch.zeros(num_frames, 3).float(),
+        return_full_pose=True,
+    )
+
+    human_height = 1.66 + 0.1 * betas[0, 0]
+
+    return tram_data, body_model, smplx_output, human_height
+
+
 def load_gvhmr_pred_file(gvhmr_pred_file, smplx_body_model_path):
     gvhmr_pred = torch.load(gvhmr_pred_file)
     smpl_params_global = gvhmr_pred['smpl_params_global']

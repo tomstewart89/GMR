@@ -6,6 +6,8 @@ from typing import Dict, List
 from pydantic import BaseModel
 from .params import ROBOT_XML_DICT, IK_CONFIG_DICT
 
+import torch
+
 
 class IKConfigs(BaseModel):
     class IKMatch(BaseModel):
@@ -195,7 +197,7 @@ class GeneralMotionRetargeting:
 
         # scale other body parts in local frame
         human_data_local = {
-            body_name: (human_data[body_name][0] - root_pos)
+            body_name: torch.Tensor(human_data[body_name][0] - root_pos)
             * self.human_scale_table[body_name]
             for body_name in self.human_scale_table
             if body_name != self.human_root_name
