@@ -7,12 +7,15 @@ import numpy as np
 
 from general_motion_retargeting import GeneralMotionRetargeting as GMR
 from general_motion_retargeting import RobotMotionViewer
-from general_motion_retargeting.utils.smpl import load_smplx_file, get_smplx_data_offline_fast
+from general_motion_retargeting.utils.smpl import (
+    load_smplx_file,
+    get_smplx_data_offline_fast,
+)
 
 from rich import print
 
 if __name__ == "__main__":
-    
+
     HERE = pathlib.Path(__file__).parent
 
     parser = argparse.ArgumentParser()
@@ -20,12 +23,7 @@ if __name__ == "__main__":
         "--smplx_file",
         help="SMPLX motion file to load.",
         type=str,
-        # required=True,
-        default="/home/yanjieze/projects/g1_wbc/GMR/motion_data/ACCAD/Male1General_c3d/General_A1_-_Stand_stageii.npz",
-        # default="/home/yanjieze/projects/g1_wbc/GMR/motion_data/ACCAD/Male2MartialArtsKicks_c3d/G8_-__roundhouse_left_stageii.npz"
-        # default="/home/yanjieze/projects/g1_wbc/TWIST-dev/motion_data/AMASS/KIT_572_dance_chacha11_stageii.npz"
-        # default="/home/yanjieze/projects/g1_wbc/GMR/motion_data/ACCAD/Male2MartialArtsPunches_c3d/E1_-__Jab_left_stageii.npz",
-        # default="/home/yanjieze/projects/g1_wbc/GMR/motion_data/ACCAD/Male1Running_c3d/Run_C24_-_quick_side_step_left_stageii.npz",
+        default="/home/tom/projects/tram/results/IMG_6174/hps/smplx_0.npy",
     )
     
     parser.add_argument(

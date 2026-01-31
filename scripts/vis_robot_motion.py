@@ -13,7 +13,9 @@ if __name__ == "__main__":
     parser.add_argument("--video_path", type=str, default="videos/example.mp4")
 
     args = parser.parse_args(
-        "--robot skeleton --robot_motion_path /home/tom/projects/GMR/out.pkl".split(" ")
+        "--robot unitree_g1 --robot_motion_path /home/tom/projects/GMR/assets/g1_capoeira/armada.pkl --record_video --video_path videos/cheat_gainer.mp4".split(
+            " "
+        )
     )
 
     robot_type = args.robot
@@ -51,4 +53,5 @@ if __name__ == "__main__":
         frame_idx += 1
         if frame_idx >= len(motion_root_pos):
             frame_idx = 0
+            break
     env.close()
